@@ -1,0 +1,25 @@
+{
+  "name": "competitive-programming",
+  "version": "1.0.0",
+  "description": "Utils for algorithms and data structures for complex problem solving",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "ts": "ts-node index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesusaguas/Competitive-programming.git"
+  },
+  "author": "Jesus Aguas (@jesusaguas)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jesusaguas/Competitive-programming/issues"
+  },
+  "homepage": "https://github.com/jesusaguas/Competitive-programming#readme",
+  "devDependencies": {
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
