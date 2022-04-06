@@ -7,6 +7,9 @@ let names: string[] = ['Snake', 'Ocelot', 'Otacon', 'Naomi']
 let numbersArray: Array<number> = [1, 2, 3, 4]
 let namesArray: Array<string> = ['Snake', 'Ocelot', 'Otacon', 'Naomi']
 
+// Fill function allows you to fill an array with a value
+const zeros = new Array(5).fill(0);
+
 let array = []
 
 /** ------- ITERATION  ------- **/
