@@ -43,8 +43,8 @@ array.sort((a, b) => a-b ) // Sort numbers in ascending order (Without arguments
 
 
 /** ------- FIND  ------- **/
-const item = array.find(item => item === 3)  // Find the first item with value 3 or undefined
-const index = array.findIndex(item => item > 18) // Find the index of first item with a value over 18 or -1
+var item = array.find(item => item === 3)  // Find the first item with value 3 or undefined
+var index = array.findIndex(item => item > 18) // Find the index of first item with a value over 18 or -1
 const items = array.filter(item => item >= 18); // Return an array of all values that are 18 or over
 const partialArray = array.slice(1,3) // Return an array starting at index 1 until the index 3 -> [2nd, 3rd] items
 
