@@ -2,9 +2,9 @@
 /*
 Merge sort is a sorting algorithm that uses the “divide and conquer” concept.
 
-- Given an array, we first divide it in the middle and we get 2 arrays.
-- We recursively perform this operation, until we get to arrays of 1 element.
-- Then we start building up the sorted array from scratch, by ordering the individual items we got.
+1. Given an array, we first divide it in the middle and we get 2 arrays.
+2. We recursively perform this operation, until we get to arrays of 1 element.
+3. Then we start building up the sorted array from scratch, by ordering the individual items we got.
 
 Unlike Quick Sort, Merge Sort is not an in-place sorting algorithm, 
 meaning it takes extra space other than the input array. 
