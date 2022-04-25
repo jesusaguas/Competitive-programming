@@ -43,12 +43,12 @@ myMap.set(function() {}, 'value associated with keyFunc')
 myMap.get('a string')    // "value associated with 'a string'"
 myMap.has('notExists')   // false (True if the key exists)
 myMap.get('notExists')   // undefined
-myMap.size               // 3
+var size = myMap.size    // 3
 
 
 /** ------- DELETE  ------- **/
 myMap.delete('a string') // True if successful, else false
-myMap.clear() // Removes all key-value pairs from the Map object.
+myMap.clear() // Removes all key-value pairs from the Map object
 
 /** -- EXTRA -- */
 // Merge maps
