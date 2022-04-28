@@ -27,10 +27,10 @@ function partition(arr: number[], start: number, end:number){
     let pivotIndex = start; 
     for (let i = start; i < end; i++) {
         if (arr[i] < pivotValue) {
-        // Swapping elements
-        [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
-        // Moving to next element
-        pivotIndex++;
+            // Swapping elements
+            [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+            // Moving to next element
+            pivotIndex++;
         }
     }
     
