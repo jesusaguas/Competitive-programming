@@ -31,8 +31,8 @@ array.splice(3, 0, "NEW") // Add in a specific index position(3) and remove 0 it
 
 
 /** ------- DELETION  ------- **/
-array.pop() // Remove from the end
-array.shift() // Remove from the beginning
+array.pop() // Remove and returns first element from the end
+array.shift() // Remove and returns first element from the beginning
 array.splice(2, 1) // Remove and returns from a specific index position(2) the amount of elements(1)
 
 
