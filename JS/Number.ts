@@ -28,6 +28,8 @@ In practice it means that we can safely work up to 2^31−1 (2 147 483 647)
 const infinity = 2/0 || Infinity
 Number.MAX_VALUE // 1.7976931348623157 * (10^308)
 Number.MIN_VALUE // 2^-1074
+Number.MAX_SAFE_INTEGER // 2^53 o 10^15
+Number.MIN_SAFE_INTEGER // -2^53 o -10^15
 
 // NaN
 // NaN is a JavaScript reserved word indicating that a number is not a legal number.
