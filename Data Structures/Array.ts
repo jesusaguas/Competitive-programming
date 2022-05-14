@@ -10,6 +10,14 @@ let namesArray: Array<string> = ['Snake', 'Ocelot', 'Otacon', 'Naomi']
 // Fill function allows you to fill an array with a value
 const zeros = new Array(5).fill(0);
 
+// Fill with a range of numbers
+//In ES6 using Array from() and keys() methods.
+(Array.from(Array(10).keys())); //=> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+//Shorter version using spread operator.
+([...Array(10).keys()]) //=> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+//Start from 1 by passing map function to Array from(), with an object with a length property:
+Array.from({length: 10}, (_, i) => i + 1) //=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
 let array = []
 
 /** ------- ITERATION  ------- **/
