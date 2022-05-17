@@ -5,6 +5,7 @@ This file briefly goes through basic computer science concepts that you might ge
 ## Table of Contents
 
 - [Operating systems](#operating-systems)
+- [Computer Networking](#computer-networking)
 
 ## Operating systems
 
@@ -33,3 +34,50 @@ One of the possible solutions to prevent starvation is to use a resource schedul
 ### Mutex
 
 A Mutex is a Mutually exclusive flag. Is like a token you need to be able to use the resources and its exclusive, only one can have it to use the resources.
+
+## Computer Networking
+
+Is the way computers exchange information around the world, its architecture is abstracted in 7 layers based on the Open Systems Interconnection model (OSI).
+
+### 7. Application
+
+HTTP/HTTPS -> Web Surfing
+FTP -> File Transfer
+SMTP -> Emails
+Telnet -> Virtual terminals
+
+### 6. Presentation
+
+Translation -> Data compression -> Encryption/Decryption
+SSL (Secure Sockets Layer)
+
+### 5. Session
+
+Enable sending and receiving data -> API(Application Programming interfaces)
+Authentication + Authorization + Session management
+
+### 4. Transport
+
+Reliability of the communication through:
+Segmentation + Flow Control + Error control(checksum)
+TCP (Transmission Control Protocol) -> Connection-oriented Transmission
+UDP (User Datagram Protocol) -> Connectionless Transmission
+
+### 3. Network
+
+Works for the transmission of packages between one computer and another.
+Logical Addressing (IPv4/IPv6) + Routing + Path determination
+
+### 2. Data link
+
+Access the media(framing) +
+Controls how data is place and received from the media (Media Acces Control - MAC)
+
+### 1. Physical
+
+Converts bits into signals(light on )
+
+### Resources
+
+[OSI summary](https://www.youtube.com/watch?v=keeqnciDVOo)
+[OSI in deep](https://www.youtube.com/watch?v=vv4y_uOneC0)
