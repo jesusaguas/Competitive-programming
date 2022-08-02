@@ -6,7 +6,9 @@ This file briefly goes through basic computer science concepts that you might ge
 
 - [Operating systems](#operating-systems)
 - [Computer Networking](#computer-networking)
-- [Design patterns](#design-patterns)
+- [Design Patterns](#design-patterns)
+- [Solid Principles](#solid-principles)
+- [Grasp Principles](#grasp-principles)
 
 ## Operating systems
 
@@ -512,3 +514,81 @@ Suppose a program has a sequence of commands that it executes in order. If each 
 ### Resources - Design Patterns
 
 [Design Patterns](https://www.youtube.com/watch?v=tv-_1er1mWI)
+
+## SOLID principles
+
+### S -> Single Responsibility Principle
+
+A class should have only one responsibility.
+
+### O -> Open-Closed Principle
+
+A software module (it can be a class or method ) should be open for extension but closed for modification.
+
+### L -> Liskov Substitution Principle
+
+Derived classes must be substitutable for their base classes.
+Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it.
+
+### I -> Interface Segregation Principle
+
+Many client-specific interfaces are better than one general-purpose interface.
+
+### D -> Dependency Inversion Principle (DIP)
+
+Depend upon abstractions, not concretions.
+Program to an interface, not to an implementation.
+High-level modules should not depend upon low-level modules. Both should depend upon abstractions.
+Dont connect concrete implementations, but abstractions(interfaces)
+
+### Resources - SOLID principles
+
+[SOLID principles](https://www.youtube.com/watch?v=2X50sKeBAcQ)
+
+## GRASP principles
+
+### Information Expert
+
+You should assign a responsibility to the class which has the information necessary to fulfill that responsibility.
+
+### Creator
+
+Helps to decide which class should be responsible for creating a new instance of a class.
+According to Larman, a class, B, should be given the responsibility to create another class, A, if any of the following conditions are true:
+
+a) B contains A
+b) B aggregates A
+c) B has the initializing data for A
+d) B records A
+e) B closely uses A
+
+### Controller
+
+The first purpose of the Controller is to encapsulate a system operation.
+The second purpose of the Controller is to provide a layer between the UI and the Domain Model.
+
+### Indirection
+
+Problem: Where to assign responsibility, to avoid direct coupling between two (or more) things? How to de-couple objects so that low coupling is supported and reuse potential remains higher?
+Solution: Assign the responsibility to an intermediate object to mediate between other components or services so that they are not directly coupled.
+
+### Low coupling
+
+This principle states that one should assign a responsibility so that the dependency between the classes remains low.
+
+### High cohesion
+
+Attempts to keep objects appropriately focused, manageable and understandable.
+
+### Polymorphism
+
+Problem: How to handle alternatives based on type? How to create pluggable software components?
+Solution: When related alternatives or behaviors vary by type (class), assign responsibility for the behavior—using polymorphic operations—to the types for which the behavior varies. (Polymorphism has several related meanings. In this context, it means "giving the same name to services in different objects".
+
+### Protected variations
+
+The protected variations pattern protects elements from the variations on other elements (objects, systems, subsystems) by wrapping the focus of instability with an interface and using polymorphism to create various implementations of this interface.
+
+### Pure fabrication
+
+A pure fabrication is a class that does not represent a concept in the problem domain, specially made up to achieve low coupling, high cohesion, and the reuse potential thereof derived.
