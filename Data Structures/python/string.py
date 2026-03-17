@@ -1,7 +1,7 @@
 from collections import Counter
 
 # ==============================================================================
-# STRING TIME COMPLEXITY CHEAT SHEET
+# STRINGS
 # ==============================================================================
 
 """
@@ -175,6 +175,18 @@ def is_anagram_v2(s, t):
 # Example: Reverse a string, for example, "hello" becomes "olleh".
 def reverse_string(s):
     return s[::-1]
+
+def reverse_string_v2(s):
+    return ''.join(reversed(s)) ## reversed() returns an iterator, so we join it back into a string
+
+def reverse_string_v3(s):
+    chars = list(s)
+    left, right = 0, len(chars) - 1
+    while left < right:
+        chars[left], chars[right] = chars[right], chars[left]
+        left += 1
+        right -= 1
+    return ''.join(chars)
 
 def reverse_words(s):
     return ' '.join(s.split()[::-1])
