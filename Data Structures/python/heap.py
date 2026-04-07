@@ -27,15 +27,15 @@ k = requested number of elements
 +-----------------------------------+---------------------------------------------+-------------+--------------------------------------------------------+
 | Operation                         | Example                                     | Complexity  | Explanation                                            |
 +-----------------------------------+---------------------------------------------+-------------+--------------------------------------------------------+
-| Build heap from list             | heapify(arr)                                | O(n)        | In-place linear-time heap construction                 |
-| Push                             | heappush(h, x)                              | O(log n)    | Sifts up to maintain heap property                     |
-| Pop minimum                      | heappop(h)                                  | O(log n)    | Removes root, sifts down                               |
-| Peek minimum                     | h[0]                                        | O(1)        | Root of min-heap                                       |
-| Push then pop (faster combo)     | heappushpop(h, x)                           | O(log n)    | One combined adjust                                    |
-| Pop then push (replace root)     | heapreplace(h, x)                           | O(log n)    | Always pops first, then pushes                         |
-| k smallest / largest             | nsmallest(k, arr), nlargest(k, arr)         | O(n log k)  | Better than full sort when k << n                      |
-| Merge sorted iterables           | merge(a, b, c...)                           | O(total n)  | Lazy k-way merge                                       |
-| Heap sort via repeated pop       | while h: heappop(h)                         | O(n log n)  | Not in-place sort in Python                            |
+| Build heap from list              | heapify(arr)                                | O(n)        | In-place linear-time heap construction                 |
+| Push                              | heappush(h, x)                              | O(log n)    | Sifts up to maintain heap property                     |
+| Pop minimum                       | heappop(h)                                  | O(log n)    | Removes root, sifts down                               |
+| Peek minimum                      | h[0]                                        | O(1)        | Root of min-heap                                       |
+| Push then pop (faster combo)      | heappushpop(h, x)                           | O(log n)    | One combined adjust                                    |
+| Pop then push (replace root)      | heapreplace(h, x)                           | O(log n)    | Always pops first, then pushes                         |
+| k smallest / largest              | nsmallest(k, arr), nlargest(k, arr)         | O(n log k)  | Better than full sort when k << n                      |
+| Merge sorted iterables            | merge(a, b, c...)                           | O(total n)  | Lazy k-way merge                                       |
+| Heap sort via repeated pop        | while h: heappop(h)                         | O(n log n)  | Not in-place sort in Python                            |
 +-----------------------------------+---------------------------------------------+-------------+--------------------------------------------------------+
 
 IMPORTANT NOTES
