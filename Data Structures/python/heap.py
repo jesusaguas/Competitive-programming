@@ -11,6 +11,7 @@ from heapq import (
     nlargest,
     nsmallest,
 )
+import math
 
 # ==============================================================================
 # PYTHON HEAPS (heapq)
@@ -59,6 +60,13 @@ print(nums[0]) # peek min, O(1)
 
 heappush(nums, 2)  # O(log n)
 print(heappop(nums))  # 1, O(log n)
+
+## You can store arbitrary data in the heap while ordering by a priority key
+heap = []
+my_object = {"id": 1, "name": "task"}
+priority = 5
+heappush(heap, (priority, my_object)) 
+priority, obj = heappop(heap)
 
 ## You can push tuples for multi-key sorting (e.g. by count, then value):
 heap = []
@@ -351,14 +359,15 @@ def k_closest_points(points, k):
     Keep max-heap of size k via negative distance.
     """
     heap = []
-    for x, y in points:
-        d = x * x + y * y
-        if len(heap) < k:
-            heappush(heap, (-d, x, y))
+    for (x, y) in points:
+        d = - math.sqrt(x**2+y**2)
+
+        if len(heap) == k:
+            heapq.heappushpop(heap, (d, (x,y)))
         else:
-            if d < -heap[0][0]:
-                heapreplace(heap, (-d, x, y))
-    return [[x, y] for _, x, y in heap]
+            heapq.heappush(heap, (d, (x,y)))
+
+    return [(x, y) for (d, (x,y)) in heap]
 
 
 print(heap_sort_ascending([5, 3, 8, 1]))
