@@ -58,22 +58,7 @@ for value in mp.values():
     print(value)
 
 
-# 2. SAFE HELPERS
-def safe_get(d, key, default=None):
-    return d.get(key, default)
-
-
-def safe_delete(d, key):
-    return d.pop(key, None)
-
-
-print(safe_get(mp, "id"))         # 202
-print(safe_get(mp, "unknown", -1))  # -1
-print(safe_delete(mp, "id"))      # 202
-print(safe_delete(mp, "id"))      # None
-
-
-# 3. FREQUENCY COUNTING
+# 2. FREQUENCY COUNTING
 arr = [1, 2, 2, 3, 3, 3]
 freq = {}
 for x in arr:
@@ -84,7 +69,7 @@ print(freq)  # {1: 1, 2: 2, 3: 3}
 print(Counter(arr))  # Counter({3: 3, 2: 2, 1: 1})
 
 
-# 4. defaultdict PATTERN
+# 3. defaultdict PATTERN
 groups = defaultdict(list) # Creates empty list for new keys automatically
 pairs = [("a", 10), ("b", 20), ("a", 30)]
 for k, v in pairs:
@@ -96,7 +81,7 @@ counts["x"] += 1 # No need to check if "x" exists first
 print(dict(counts))  # {'x': 1}
 
 
-# 5. CLASSIC: TWO SUM (LeetCode 1)
+# 4. CLASSIC: TWO SUM (LeetCode 1)
 # Description: Given an array of integers and a target, return indices of the two numbers such that they add up to target.
 def two_sum(nums, target):
     seen = {}  # value -> index
@@ -111,7 +96,7 @@ def two_sum(nums, target):
 print(two_sum([2, 7, 11, 15], 9))  # [0, 1]
 
 
-# 6. VALID ANAGRAM (LeetCode 242)
+# 5. VALID ANAGRAM (LeetCode 242)
 # Description: Given two strings, determine if they are anagrams (same char counts).
 def is_anagram(s, t):
     return Counter(s) == Counter(t)
@@ -120,7 +105,7 @@ print(is_anagram("anagram", "nagaram"))  # True
 print(is_anagram("rat", "car"))          # False
 
 
-# 7. GROUP ANAGRAMS (LeetCode 49)
+# 6. GROUP ANAGRAMS (LeetCode 49)
 # Description: Given an array of strings, group anagrams together.
 def group_anagrams(strs):
     mp = defaultdict(list)
@@ -132,7 +117,7 @@ def group_anagrams(strs):
 print(group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
 
 
-# 8. TOP K FREQUENT ELEMENTS (LeetCode 347)
+# 7. TOP K FREQUENT ELEMENTS (LeetCode 347)
 def top_k_frequent(nums, k):
     freq = Counter(nums)
     # Sort by frequency and take top k keys
@@ -149,7 +134,7 @@ print(top_k_frequent([1, 1, 1, 2, 2, 3], 2))  # [1, 2]
 print(top_k_frequentV2([1, 1, 1, 2, 2, 3], 2))  # [1, 2]
 
 
-# 9. FIRST UNIQUE CHARACTER (LeetCode 387)
+# 8. FIRST UNIQUE CHARACTER (LeetCode 387)
 # Description: Given a string, find the index of the first non-repeating character.
 def first_uniq_char(s):
     count = Counter(s)
@@ -162,7 +147,7 @@ print(first_uniq_char("leetcode"))  # 0
 print(first_uniq_char("aabb"))      # -1
 
 
-# 10. SUBARRAY SUM EQUALS K (LeetCode 560)
+# 9. SUBARRAY SUM EQUALS K (LeetCode 560)
 # Description: Given an array of integers and an integer k, find the total number of continuous subarrays whose sum equals to k.
 # Prefix sum + hashmap frequency
 def subarray_sum(nums, k):
@@ -179,7 +164,7 @@ def subarray_sum(nums, k):
 print(subarray_sum([1, 1, 1], 2))  # 2
 
 
-# 11. LONGEST SUBSTRING WITHOUT REPEATING CHARS (LeetCode 3)
+# 10. LONGEST SUBSTRING WITHOUT REPEATING CHARS (LeetCode 3)
 # Description: Given a string, find the length of the longest substring without repeating characters.
 def length_of_longest_substring(s):
     last = {}  # char -> latest index
@@ -197,7 +182,7 @@ def length_of_longest_substring(s):
 print(length_of_longest_substring("abcabcbb"))  # 3
 
 
-# 12. ISOMORPHIC STRINGS (LeetCode 205)
+# 11. ISOMORPHIC STRINGS (LeetCode 205)
 # Description: Given two strings s and t, determine if they are isomorphic (there is a one-to-one mapping between characters).
 def is_isomorphic(s, t):
     s_to_t = {}
@@ -217,7 +202,7 @@ print(is_isomorphic("egg", "add"))  # True
 print(is_isomorphic("foo", "bar"))  # False
 
 
-# 13. CUSTOM HASHMAP WRAPPER (OPTIONAL INTERVIEW STYLE)
+# 12. CUSTOM HASHMAP WRAPPER (OPTIONAL INTERVIEW STYLE)
 class HashMap:
     def __init__(self):
         self._d = {}
@@ -249,7 +234,7 @@ print(hm.remove("x"))     # 42
 print(hm.size())          # 0
 
 
-# 14. PERFORMANCE TIPS
+# 13. PERFORMANCE TIPS
 # - Use dict.get(key, 0) for counting.
 # - Use defaultdict(list/set/int) to reduce boilerplate.
 # - Use Counter for quick frequency tasks.
@@ -257,7 +242,7 @@ print(hm.size())          # 0
 # - For ordered behavior: Python 3.7+ dict preserves insertion order.
 
 
-# 15. COMMON PITFALLS
+# 14. COMMON PITFALLS
 # 1) Accessing missing key with d[key] raises KeyError; prefer d.get.
 # 2) Using mutable keys (like list/set) is invalid.
 # 3) Forgetting to initialize prefix hash with {0: 1} in subarray sum patterns.
@@ -265,7 +250,7 @@ print(hm.size())          # 0
 # 5) Assuming dict iteration order is sorted (it is insertion order, not sorted).
 
 
-# 16. INTERVIEW CHECKLIST (HASHMAP PATTERN RECOGNITION)
+# 15. INTERVIEW CHECKLIST (HASHMAP PATTERN RECOGNITION)
 # - Need fast lookup by value? -> value->index map.
 # - Need counts/frequencies? -> Counter or dict frequency map.
 # - Need grouping by signature? -> dict[key].append(...).
