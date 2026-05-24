@@ -194,6 +194,7 @@ def reverse_words(s):
 # 10. PRACTICAL LEETCODE PATTERNS
 
 # LeetCode 125: Valid Palindrome
+# A palindrome is a string that reads the same backward as forward, for example, "madam".
 def is_palindrome_lc(s):
     clean = ''.join(c.lower() for c in s if c.isalnum())
     return clean == clean[::-1]

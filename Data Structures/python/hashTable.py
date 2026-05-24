@@ -176,7 +176,6 @@ def subarray_sum(nums, k):
         seen[pref] = seen.get(pref, 0) + 1
     return ans
 
-
 print(subarray_sum([1, 1, 1], 2))  # 2
 
 
