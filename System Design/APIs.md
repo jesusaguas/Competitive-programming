@@ -46,22 +46,28 @@ Content-Type: application/json
 }
 ```` 
 - Query language for APIs
-- Single endpoint (`/graphql`)
+- Many client, different shapes, single endpoint (`/graphql`)
 - Clients specify exactly what data they need
-- Reduces over-fetching and under-fetching
-- More complex server implementation
+- Reduces over-fetching and under-fetching (deep nested reads in one trip)
 
+
+- More complex server implementation
+- HTTP caching is harder
+- N+1 query problem (where ) if not optimized (e.g., DataLoader)
 ### gRPC (Google Remote Procedure Call)
 `````
 service UserService {
   rpc GetUser (GetUserRequest) returns (GetUserResponse);
 }
 `````
-- High-performance RPC framework
+- High-performance RPC framework, low latency, language-agnostic
 - Uses Protocol Buffers for serialization (binary format, smaller and faster than JSON)
 - HTTP/2 based transport
 - Supports streaming (unary, server, client, bidirectional)
-- Common in microservices and internal APIs
+- Common in internal microservices
+
+- Hard to debug (binary format)
+- Not browser-friendly (requires gRPC-Web)
 
 ### Server Sent Events (SSE)
 - Unidirectional real-time updates from server to client
